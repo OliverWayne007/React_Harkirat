@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Application</title>
+    <style>
+        #todoEngine
+        {
+            margin: 20px;
+        }
+        .todoElement
+        {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="todoApplication">
+        <div id="todoEngine">
+            <input id="title" type="text" placeholder="title">
+            <br> <br>
+            <input id="description" type="text" placeholder="description">
+            <br> <br>
+            <button id="addTodoButton" onclick="addTodoElement()"> Add todo </button>
+        </div>
+        <div id="todoContainer"></div>
+    </div>
+    <script>
+        function addTodoElement()
+        {
+            const todoContainer = document.getElementById("todoContainer");
+
+            const title = document.getElementById("title").value;
+            console.log(title);
+
+            const description = document.getElementById("description").value;
+            console.log(description);
+
+            const todoElement = document.createElement("div");
+            todoElement.innerHTML = `
+            <div class="todoElement">
+                <div> ${title} </div>
+                <div> ${description} </div>
+                <div> 
+                    <button> Mark As Done </button>
+                </div>
+            </div>`;
+            
+            todoContainer.appendChild(todoElement);
+        }
+    </script>
+</body>
+</html>

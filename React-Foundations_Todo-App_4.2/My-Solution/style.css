@@ -1,0 +1,70 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    background-color: yellow;
+}
+
+#main
+{
+    border: 5px solid red;
+}
+
+.title
+{
+    margin: 20px;
+}
+
+.title, .addTitleLabel
+{
+    font-weight: bold;
+}
+
+.description
+{
+    margin: 20px;
+}
+
+.description , .addDescriptionLabel
+{
+    font-weight: bold;
+}
+
+.button
+{
+    margin: 20px;
+}
+
+.addTodoButton
+{
+    border: 3px solid black;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: rgb(61, 250, 3);
+}
+
+.addTodoButton:hover
+{
+    border: 3px solid blue;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.titleInput
+{
+    border: 2px solid black;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.descriptionInput
+{
+    border: 2px solid black;
+    border-radius: 3px;
+    font-weight: bold;
+}

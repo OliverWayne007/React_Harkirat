@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Application</title>
+    <style>
+        #todoEngine
+        {
+            margin: 20px;
+        }
+        .todoElement
+        {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="todoApplication">
+        <div id="todoEngine">
+            <input id="title" type="text" placeholder="title">
+            <br> <br>
+            <input id="description" type="text" placeholder="description">
+            <br> <br>
+            <button id="addTodoButton" onclick="addTodoElement()"> Add todo </button>
+            <button id="updateTodoButton" onclick="handleUpdateTodo()"> Update todo </button>
+        </div>
+        <div id="todoContainer"></div>
+    </div>
+    <script>
+        
+        let globalId = 1;
+
+        // Why the fuck did this handleOnClick function not work when defined inside the createTodoElement function ???
+        const handleMarkAsDone = (id) => {
+            // console.log(typeof(id));
+            let todoElement = document.getElementById(id);
+            // console.log(todoElement);
+            todoElement.innerHTML = "";
+        }
+
+        function createTodoElement(title , description , id)
+        {
+            // Creating a todo element
+            const todoElement = document.createElement("div");
+            // Setting the id attribute of the todoElement
+            todoElement.setAttribute("id" , id);
+            // Setting the class attribute of the todoElement
+            todoElement.setAttribute("class" , "todoElement");
+            
+            // Creating title, description and MarkAsDone button to be appended to the todoElement
+            const todoTitle = document.createElement("div");
+            todoTitle.innerHTML = title;
+            
+            const todoDescription = document.createElement("div");
+            todoDescription.innerHTML = description;
+
+            const markAsDoneButton = document.createElement("button");
+            markAsDoneButton.innerHTML = "Mark As Done";
+            markAsDoneButton.setAttribute("onclick" , `handleMarkAsDone(${id})`);
+
+            // Appending todoTitle , todoDescription and markAsDoneButton to the todoElement
+            todoElement.appendChild(todoTitle);
+            todoElement.appendChild(todoDescription);
+            todoElement.appendChild(markAsDoneButton);
+
+            return todoElement;
+        }
+
+        function addTodoElement()
+        {
+            const todoContainer = document.getElementById("todoContainer");
+
+            const title = document.getElementById("title").value;
+            // console.log(title);
+
+            const description = document.getElementById("description").value;
+            // console.log(description);
+
+            const todoElement = createTodoElement(title , description , globalId++);
+            
+            // Appending the todoElement to the todoContainer
+            todoContainer.appendChild(todoElement);
+        }
+
+        let state = 
+        [
+            {
+                id: 1 , 
+                title: "Arrow" , 
+                description: "My favourite web-series"
+            } ,
+
+            {
+                id: 2 , 
+                title: "Harkirat Singh Cohort" , 
+                description: "Using harkirat's cohort for learning web-developement concepts"
+            } , 
+
+            {
+                id: 3 , 
+                title: "Hammy" , 
+                description: "My only and favourite cat since the past 4 years !!!"
+            }
+        ]
+
+        // Following are some constraints that we have put on the state:
+        // State will always be an array
+        // Every element of the state would be an object having title , description and id
+        function updateAccordingToState(state)
+        {
+            const todoContainer = document.getElementById("todoContainer");
+            todoContainer.innerHTML = "";
+            for(let i = 0 ; i < state.length ; i++)
+            {
+                const id = state[i].id;
+                const title = state[i].title;
+                const description = state[i].description;
+
+                const todoElement = createTodoElement(title , description , id);
+                todoContainer.appendChild(todoElement);
+            }
+        }
+
+        function handleUpdateTodo()
+        {
+            updateAccordingToState(state);
+        }
+
+    </script>
+</body>
+</html>
