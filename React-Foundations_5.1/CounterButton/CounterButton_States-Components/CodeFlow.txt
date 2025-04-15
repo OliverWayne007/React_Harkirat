@@ -1,0 +1,16 @@
+1. First of all, the buttonComponentReRender() function is called to render the initial UI.
+
+2. The buttonComponentReRender() function clears the existing UI and calls the buttonComponent() function 
+   with the initial state as input.
+
+3. The buttonComponent(state) function generates and returns the DOM element, given the state.
+
+4. The state changes when the button is clicked.
+
+5. To update the state on clicking the button, an event-listener is attached to the button to listen to the "onclick" event.
+
+6. On-clicking the button, this "onButtonPress()" event-listener is fired to update the state and re-render the component, given the 
+   updated state.
+
+7. Inorder to reflect the state change on the UI, the component is re-rendered, given the updated state by invoking the
+   buttonComponentReRender() function.

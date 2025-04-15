@@ -1,0 +1,34 @@
+What is a static website ?
+
+---- A website whose HTML is not changing is called a static website.
+
+Why do we need React ?
+
+---- For dynamic websites, libraries like react make it easier to do DOM manipulation.
+
+Do browsers understand React ?
+
+---- No, browsers do not understand react. Browsers only understand HTML/CSS/JS. 
+---- React is just an easier way to write HTML/CSS/JS.
+---- React is a new syntax that under the hood gets converted to HTML/CSS/JS.
+---- JSX is not natively understood by browsers. 
+---- Instead, it needs to be converted into valid JavaScript using tools like Babel. 
+---- This process is known as transpilation.
+---- It ensures that browsers can properly interpret and run the JSX code embedded within React applications.
+
+What is state in React ?
+
+---- An object that represents the current state of the react app.
+---- It represents the dynamic things in the app (things that change).
+---- For example the value of the counter.
+
+What is a component in React ?
+
+---- Component represents how a DOM element should render, given a state.
+---- It is a dynamic , re-usable HTML snippet that changes given the state.
+---- A component takes a state as an input and renders accordingly.
+
+What is re-rendering ?
+
+---- A state change triggers a re-render.
+---- A re-render represents the actual DOM being manipulated when the state changes.

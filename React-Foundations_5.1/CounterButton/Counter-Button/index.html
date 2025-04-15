@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Button</title>
+</head>
+<body>
+    <div class="container">
+        <button class="btn" id="counterBtn" onclick="incrementCounter()"> Count: 0 </button>
+    </div>
+    <script>
+
+        // Solution-1:
+
+        // let counter = 0;
+
+        // function incrementCounter()
+        // {
+        //     counter += 1;
+        //     const counterButton = document.getElementById("counterBtn");
+        //     counterButton.innerText = `count is: ${counter}`;
+        // }
+
+        // Solution-2:
+
+        function incrementCounter()
+        {
+            const counterContent = document.getElementById("counterBtn").innerText.split(" ");
+            const counterText = counterContent[0];
+            const currentCounterValue = counterContent[1];
+            // console.log(currentCounterValue);
+            const newCounterValue = parseInt(currentCounterValue) + 1;
+            document.getElementById("counterBtn").innerText = `${counterText} ${newCounterValue}`;
+        }
+        
+    </script>
+</body>
+</html>
