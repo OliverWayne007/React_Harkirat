@@ -1,0 +1,27 @@
+#App
+{
+    background-color: lightgray;
+}
+
+#topBar
+{
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+button
+{
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: yellow;
+    color: red;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+button:hover
+{
+    cursor: pointer;
+}

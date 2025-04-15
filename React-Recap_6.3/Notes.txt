@@ -1,0 +1,9 @@
+What is React Reconciliation ?
+
+Ans: React Reconciliation basically refers to the process of creating a virtual DOM from the current state, finding out the
+     difference between the previous DOM and the virtual DOM using some diffing algorithm, performing all the necessary
+     DOM manipulations to the existing DOM in an optimized manner and finally rendering the updated DOM on the screen by React-DOM.
+
+What is Re-rendering in react ?
+
+Ans: Re-rendering a component basically means invoking or calling that Functional component again.
