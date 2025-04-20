@@ -3,7 +3,7 @@ from the server all over again, which defeats the purpose of a Single-Page-Appli
 
 Therefore, we don't use windows.location.href = "/somepath", rather we use the useNavigate() hook provided by react-router-dom.
 
-The useNavigate hook provided by react-router-dom can only be used from inside a component that is present inside the 
+The useNavigate hook provided by react-router-dom can only be invoked from inside a component that is present inside the 
 <BrowserRouter></BrowserRouter> component.
 
 In the App.jsx file, we have used/invoked the useNavigate() hook from inside the <TopBar /> component which is in turn 
@@ -12,3 +12,8 @@ wrapped inside the <BrowserRouter></BrowserRouter /> component as shown below:
 <BrowserRouter>
     <TopBar />
 <BrowserRouter />
+
+
+Question: What is Lazy Loading ?
+
+Ans: 
